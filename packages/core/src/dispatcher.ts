@@ -32,9 +32,36 @@ export async function runDispatcher(db: any, resendApiKey: string) {
       await jobsRepo.markJobFailed(job.id, "Template not found", job.attempt_count + 1);
       continue;
     }
+
+    // Format dates
+    const [year, month, day] = rec.due_date.split('-');
+    const formattedDueDate = `${day}/${month}/${year}`;
+    const dueDay = day;
     
-    let subject = template.subject_template.replace('{{customer_name}}', customer.full_name).replace('{{amount}}', rec.amount_cents.toString());
-    let html = template.html_template.replace('{{customer_name}}', customer.full_name).replace('{{amount}}', rec.amount_cents.toString());
+    // Calculate grace period (due + 3 days)
+    const d = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+    d.setDate(d.getDate() + 3);
+    const formattedGraceDate = `${d.getDate().toString().padStart(2, '0')}/${(d.getMonth() + 1).toString().padStart(2, '0')}/${d.getFullYear()}`;
+
+    // Format amounts
+    const amountRaw = (rec.amount_cents / 100).toString();
+    const amountFormatted = new Intl.NumberFormat('vi-VN').format(rec.amount_cents / 100) + 'đ';
+
+    let subject = template.subject_template
+      .replace(/{{customer_name}}/g, customer.full_name)
+      .replace(/{{amount}}/g, amountFormatted)
+      .replace(/{{amount_raw}}/g, amountRaw)
+      .replace(/{{due_date}}/g, formattedDueDate)
+      .replace(/{{due_day}}/g, dueDay)
+      .replace(/{{grace_period_end}}/g, formattedGraceDate);
+
+    let html = template.html_template
+      .replace(/{{customer_name}}/g, customer.full_name)
+      .replace(/{{amount}}/g, amountFormatted)
+      .replace(/{{amount_raw}}/g, amountRaw)
+      .replace(/{{due_date}}/g, formattedDueDate)
+      .replace(/{{due_day}}/g, dueDay)
+      .replace(/{{grace_period_end}}/g, formattedGraceDate);
     
     const { messageId, error } = await provider.send({
       to: customer.email,

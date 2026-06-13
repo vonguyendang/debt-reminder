@@ -10,7 +10,7 @@ export function Customers() {
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
-  const [formData, setFormData] = useState({ full_name: '', company_name: '', email: '', phone: '' });
+  const [formData, setFormData] = useState({ full_name: '', company_name: '', email: '', phone: '', status: 'active' });
   const { showToast } = useToast();
   const { t } = useThemeLang();
 
@@ -37,7 +37,7 @@ export function Customers() {
     if (res.success) {
       setIsAddOpen(false);
       setEditId(null);
-      setFormData({ full_name: '', company_name: '', email: '', phone: '' });
+      setFormData({ full_name: '', company_name: '', email: '', phone: '', status: 'active' });
       showToast(editId ? 'Customer updated!' : 'Customer saved successfully!', 'success');
       loadCustomers();
     } else {
@@ -51,14 +51,15 @@ export function Customers() {
       full_name: c.full_name || '',
       company_name: c.company_name || '',
       email: c.email || '',
-      phone: c.phone || ''
+      phone: c.phone || '',
+      status: c.status || 'active'
     });
     setIsAddOpen(true);
   };
 
   const openAdd = () => {
     setEditId(null);
-    setFormData({ full_name: '', company_name: '', email: '', phone: '' });
+    setFormData({ full_name: '', company_name: '', email: '', phone: '', status: 'active' });
     setIsAddOpen(true);
   };
 
@@ -146,6 +147,15 @@ export function Customers() {
             <label>{t('Phone')}</label>
             <input className="input" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
           </div>
+          {editId && (
+            <div className="input-group">
+              <label>{t('Status')}</label>
+              <select className="input" required value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})}>
+                <option value="active">{t('active')}</option>
+                <option value="inactive">{t('inactive')}</option>
+              </select>
+            </div>
+          )}
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem', marginTop: '2rem' }}>
             <button type="button" className="btn btn-outline" onClick={() => setIsAddOpen(false)} disabled={loading}>{t('Cancel')}</button>
             <button type="submit" className="btn" disabled={loading}>{loading ? t('Saving...') : t('Save Customer')}</button>

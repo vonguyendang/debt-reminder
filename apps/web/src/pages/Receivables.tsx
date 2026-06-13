@@ -12,7 +12,7 @@ export function Receivables() {
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
-  const [formData, setFormData] = useState({ title: '', customer_id: '', amount: '', currency: 'VND', due_date: '', rule_ids: [] as string[] });
+  const [formData, setFormData] = useState({ title: '', customer_id: '', amount: '', currency: 'VND', due_date: '', rule_ids: [] as string[], status: 'pending' });
   const { showToast } = useToast();
   const { t } = useThemeLang();
 
@@ -40,7 +40,8 @@ export function Receivables() {
       amount_cents: Math.round(parseFloat(formData.amount) * 100),
       currency: formData.currency,
       due_date: formData.due_date,
-      rule_ids: formData.rule_ids
+      rule_ids: formData.rule_ids,
+      status: formData.status
     };
     
     let res;
@@ -55,7 +56,7 @@ export function Receivables() {
     if (res.success) {
       setIsAddOpen(false);
       setEditId(null);
-      setFormData({ title: '', customer_id: '', amount: '', currency: 'VND', due_date: '', rule_ids: [] });
+      setFormData({ title: '', customer_id: '', amount: '', currency: 'VND', due_date: '', rule_ids: [], status: 'pending' });
       showToast(editId ? 'Receivable updated!' : 'Receivable added successfully!', 'success');
       loadReceivables();
     } else {
@@ -91,14 +92,15 @@ export function Receivables() {
       amount: ((r.amount_cents || 0) / 100).toString(),
       currency: r.currency || 'VND',
       due_date: r.due_date || '',
-      rule_ids: r.rule_ids || []
+      rule_ids: r.rule_ids || [],
+      status: r.status || 'pending'
     });
     setIsAddOpen(true);
   };
 
   const openAdd = () => {
     setEditId(null);
-    setFormData({ title: '', customer_id: '', amount: '', currency: 'VND', due_date: '', rule_ids: [] });
+    setFormData({ title: '', customer_id: '', amount: '', currency: 'VND', due_date: '', rule_ids: [], status: 'pending' });
     setIsAddOpen(true);
   };
 
@@ -237,6 +239,17 @@ export function Receivables() {
               {rules.length === 0 && <span style={{ color: 'var(--text-muted)' }}>{t('No rules available to assign.')}</span>}
             </div>
           </div>
+          {editId && (
+            <div className="input-group" style={{ marginTop: '1rem' }}>
+              <label>{t('Status')}</label>
+              <select className="input" required value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})}>
+                <option value="pending">{t('pending')}</option>
+                <option value="paid">{t('paid')}</option>
+                <option value="overdue">{t('overdue')}</option>
+                <option value="cancelled">{t('cancelled')}</option>
+              </select>
+            </div>
+          )}
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem', marginTop: '2rem' }}>
             <button type="button" className="btn btn-outline" onClick={() => setIsAddOpen(false)} disabled={loading}>{t('Cancel')}</button>
             <button type="submit" className="btn" disabled={loading}>{loading ? t('Saving...') : t('Save Receivable')}</button>

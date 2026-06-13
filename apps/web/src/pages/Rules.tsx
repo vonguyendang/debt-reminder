@@ -11,7 +11,7 @@ export function Rules() {
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [editId, setEditId] = useState<string | null>(null);
-  const [formData, setFormData] = useState({ name: '', trigger_type: 'before_due', offset_days: '', recurring_preset: 'once', recurring_interval_days: '', template_id: '' });
+  const [formData, setFormData] = useState({ name: '', trigger_type: 'before_due', offset_days: '', recurring_preset: 'once', recurring_interval_days: '', template_id: '', is_active: 1 });
   const { showToast } = useToast();
   const { t } = useThemeLang();
 
@@ -36,7 +36,7 @@ export function Rules() {
       offset_minutes: parseInt(formData.offset_days) * 24 * 60,
       recurring_interval_minutes: formData.recurring_interval_days ? parseInt(formData.recurring_interval_days) * 24 * 60 : undefined,
       template_id: formData.template_id,
-      is_active: 1
+      is_active: formData.is_active
     };
     
     let res;
@@ -51,7 +51,7 @@ export function Rules() {
     if (res.success) {
       setIsAddOpen(false);
       setEditId(null);
-      setFormData({ name: '', trigger_type: 'before_due', offset_days: '', recurring_preset: 'once', recurring_interval_days: '', template_id: '' });
+      setFormData({ name: '', trigger_type: 'before_due', offset_days: '', recurring_preset: 'once', recurring_interval_days: '', template_id: '', is_active: 1 });
       showToast(editId ? 'Rule updated!' : 'Rule added successfully!', 'success');
       loadRules();
     } else {
@@ -77,14 +77,15 @@ export function Rules() {
       offset_days: r.offset_minutes ? (r.offset_minutes / (24 * 60)).toString() : '',
       recurring_preset: preset,
       recurring_interval_days: days,
-      template_id: r.template_id || ''
+      template_id: r.template_id || '',
+      is_active: r.is_active !== undefined ? r.is_active : 1
     });
     setIsAddOpen(true);
   };
 
   const openAdd = () => {
     setEditId(null);
-    setFormData({ name: '', trigger_type: 'before_due', offset_days: '', recurring_preset: 'once', recurring_interval_days: '', template_id: '' });
+    setFormData({ name: '', trigger_type: 'before_due', offset_days: '', recurring_preset: 'once', recurring_interval_days: '', template_id: '', is_active: 1 });
     setIsAddOpen(true);
   };
 
@@ -222,6 +223,16 @@ export function Rules() {
                 <option key={t.id} value={t.id}>{t.name}</option>
               ))}
             </select>
+          </div>
+          <div className="input-group" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer' }}>
+            <input 
+              type="checkbox" 
+              id="rule_is_active"
+              checked={formData.is_active === 1} 
+              onChange={e => setFormData({...formData, is_active: e.target.checked ? 1 : 0})}
+              style={{ width: '1.25rem', height: '1.25rem' }}
+            />
+            <label htmlFor="rule_is_active" style={{ marginBottom: 0, cursor: 'pointer' }}>{t('Hoạt động (Active)')}</label>
           </div>
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem', marginTop: '2rem' }}>
             <button type="button" className="btn btn-outline" onClick={() => setIsAddOpen(false)} disabled={loading}>{t('Cancel')}</button>
