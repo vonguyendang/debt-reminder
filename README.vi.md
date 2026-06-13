@@ -107,7 +107,7 @@ Trong file `apps/api/.dev.vars` (khi chạy ở máy) hoặc cấu hình Secret 
 
 ## 🤝 Đóng Góp (Contributing)
 Mọi đóng góp, báo lỗi (issues), và yêu cầu tính năng mới đều được chào đón!
-Vui lòng kiểm tra trang [issues](https://github.com/dangvo/debt-reminder-system/issues) nếu bạn muốn đóng góp cho dự án.
+Vui lòng kiểm tra trang [issues](https://github.com/vonguyendang/debt-reminder/issues) nếu bạn muốn đóng góp cho dự án.
 
 1. Fork dự án này
 2. Tạo nhánh tính năng mới (`git checkout -b feature/TinhNangMoi`)
@@ -119,8 +119,8 @@ Vui lòng kiểm tra trang [issues](https://github.com/dangvo/debt-reminder-syst
 
 ## 👤 Tác Giả (Author)
 **Đăng Võ (Dang Vo)**
-- Github: [@dangvo](https://github.com/dangvo)
-- Link Dự án: [https://github.com/dangvo/debt-reminder-system](https://github.com/dangvo/debt-reminder-system)
+- Github: [@vonguyendang](https://github.com/vonguyendang)
+- Link Dự án: [https://github.com/vonguyendang/debt-reminder](https://github.com/vonguyendang/debt-reminder)
 
 ---
 
