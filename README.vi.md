@@ -1,3 +1,9 @@
+*Ngôn ngữ: [English](README.md) | [Tiếng Việt](README.vi.md)*
+
+**Menu**: [Trang chủ](README.vi.md) | [Cài đặt](docs/setup.vi.md) | [HDSD](docs/user-guide.vi.md) | [Kiến trúc](docs/architecture.vi.md) | [API Contract](docs/api-contract.vi.md) | [Triển khai](docs/deployment.vi.md)
+
+---
+
 # 📘 Debt Reminder System (Hệ thống Báo Nợ Tự Động)
 
 ![Project Status](https://img.shields.io/badge/Status-Production_Ready-success) ![Cloudflare](https://img.shields.io/badge/Platform-Cloudflare-F38020) ![License](https://img.shields.io/badge/License-MIT-blue)

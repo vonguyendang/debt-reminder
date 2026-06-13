@@ -1,3 +1,9 @@
+*Ngôn ngữ: [English](deployment.md) | [Tiếng Việt](deployment.vi.md)*
+
+**Menu**: [Trang chủ](../README.vi.md) | [Cài đặt](setup.vi.md) | [HDSD](user-guide.vi.md) | [Kiến trúc](architecture.vi.md) | [API Contract](api-contract.vi.md) | [Triển khai](deployment.vi.md)
+
+---
+
 # 🌐 Hướng Dẫn Đưa Lên Mạng (Deployment)
 
 Đây là tài liệu hướng dẫn cách đưa hệ thống của bạn lên Internet thực sự thông qua **Cloudflare** hoàn toàn MIỄN PHÍ. 

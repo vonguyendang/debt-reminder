@@ -1,3 +1,9 @@
+*Language: [English](deployment.md) | [Tiếng Việt](deployment.vi.md)*
+
+**Navigation**: [Home](../README.md) | [Setup Guide](setup.md) | [User Guide](user-guide.md) | [Architecture](architecture.md) | [API Contract](api-contract.md) | [Deployment](deployment.md)
+
+---
+
 # 🌐 Deployment Guide
 
 *🌍 [Tiếng Việt](deployment.vi.md)*

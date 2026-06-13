@@ -1,3 +1,9 @@
+*Language: [English](README.md) | [Tiếng Việt](README.vi.md)*
+
+**Navigation**: [Home](README.md) | [Setup Guide](docs/setup.md) | [User Guide](docs/user-guide.md) | [Architecture](docs/architecture.md) | [API Contract](docs/api-contract.md) | [Deployment](docs/deployment.md)
+
+---
+
 # 📘 Debt Reminder System
 
 *🌍 [Tiếng Việt](README.vi.md)*

@@ -1,3 +1,9 @@
+*Ngôn ngữ: [English](architecture.md) | [Tiếng Việt](architecture.vi.md)*
+
+**Menu**: [Trang chủ](../README.vi.md) | [Cài đặt](setup.vi.md) | [HDSD](user-guide.vi.md) | [Kiến trúc](architecture.vi.md) | [API Contract](api-contract.vi.md) | [Triển khai](deployment.vi.md)
+
+---
+
 # 🏗️ Kiến Trúc Hệ Thống (Architecture)
 
 *🌍 [English](architecture.md)*

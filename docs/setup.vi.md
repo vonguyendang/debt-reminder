@@ -1,3 +1,9 @@
+*Ngôn ngữ: [English](setup.md) | [Tiếng Việt](setup.vi.md)*
+
+**Menu**: [Trang chủ](../README.vi.md) | [Cài đặt](setup.vi.md) | [HDSD](user-guide.vi.md) | [Kiến trúc](architecture.vi.md) | [API Contract](api-contract.vi.md) | [Triển khai](deployment.vi.md)
+
+---
+
 # 💻 Hướng Dẫn Cài Đặt Cá Nhân (Local Setup)
 
 Tài liệu này dành cho người muốn chạy thử hệ thống trên chính máy tính của mình (không tốn tiền, không cần mạng internet phức tạp).

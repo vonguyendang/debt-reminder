@@ -1,3 +1,9 @@
+*Ngôn ngữ: [English](api-contract.md) | [Tiếng Việt](api-contract.vi.md)*
+
+**Menu**: [Trang chủ](../README.vi.md) | [Cài đặt](setup.vi.md) | [HDSD](user-guide.vi.md) | [Kiến trúc](architecture.vi.md) | [API Contract](api-contract.vi.md) | [Triển khai](deployment.vi.md)
+
+---
+
 # 🔌 Tài Liệu Đặc Tả API (API Reference)
 
 *🌍 [English](api-contract.md)*

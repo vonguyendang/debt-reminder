@@ -1,3 +1,9 @@
+*Ngôn ngữ: [English](user-guide.md) | [Tiếng Việt](user-guide.vi.md)*
+
+**Menu**: [Trang chủ](../README.vi.md) | [Cài đặt](setup.vi.md) | [HDSD](user-guide.vi.md) | [Kiến trúc](architecture.vi.md) | [API Contract](api-contract.vi.md) | [Triển khai](deployment.vi.md)
+
+---
+
 # 📖 Hướng Dẫn Sử Dụng (User Guide)
 
 Tài liệu này sẽ hướng dẫn bạn cách sử dụng hệ thống từ góc độ của một người quản lý, không yêu cầu bất kỳ kiến thức lập trình nào.

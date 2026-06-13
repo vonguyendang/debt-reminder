@@ -1,3 +1,9 @@
+*Language: [English](architecture.md) | [Tiếng Việt](architecture.vi.md)*
+
+**Navigation**: [Home](../README.md) | [Setup Guide](setup.md) | [User Guide](user-guide.md) | [Architecture](architecture.md) | [API Contract](api-contract.md) | [Deployment](deployment.md)
+
+---
+
 # 🏗️ Architecture Overview
 
 *🌍 [Tiếng Việt](architecture.vi.md)*

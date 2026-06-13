@@ -1,3 +1,9 @@
+*Language: [English](setup.md) | [Tiếng Việt](setup.vi.md)*
+
+**Navigation**: [Home](../README.md) | [Setup Guide](setup.md) | [User Guide](user-guide.md) | [Architecture](architecture.md) | [API Contract](api-contract.md) | [Deployment](deployment.md)
+
+---
+
 # 💻 Local Setup Guide
 
 *🌍 [Tiếng Việt](setup.vi.md)*
