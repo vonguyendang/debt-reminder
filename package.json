@@ -1,0 +1,26 @@
+{
+  "name": "debt-reminder-system",
+  "private": true,
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r run test",
+    "setup:local": "pnpm install && pnpm run db:migrate:local && pnpm run db:seed:local",
+    "db:migrate:local": "pnpm --filter @debt-reminder/api run db:migrate:local",
+    "db:migrate:remote": "pnpm --filter @debt-reminder/api run db:migrate:remote",
+    "db:seed:local": "pnpm --filter @debt-reminder/api run db:seed:local",
+    "db:reset:local": "pnpm --filter @debt-reminder/api run db:reset:local",
+    "deploy:api": "pnpm --filter @debt-reminder/api run deploy",
+    "deploy:web": "pnpm --filter @debt-reminder/web run build && wrangler pages deploy apps/web/dist --project-name debt-reminder-web",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11"
+  }
+}

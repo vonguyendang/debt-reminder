@@ -1,0 +1,2 @@
+AUTH_SECRET="your-local-dev-secret"
+RESEND_API_KEY="re_123456789"

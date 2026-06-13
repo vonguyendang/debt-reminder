@@ -1,0 +1,21 @@
+{
+  "name": "debt-reminder-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-03-20",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "debt-reminder-db",
+      "database_id": "YOUR_D1_DATABASE_ID_HERE",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "*/15 * * * *",
+      "7,22,37,52 * * * *",
+      "15 0 * * *",
+      "30 0 * * *"
+    ]
+  }
+}

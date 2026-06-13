@@ -1,0 +1,27 @@
+{
+  "name": "@debt-reminder/api",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "db:migrate:local": "wrangler d1 migrations apply debt-reminder-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply debt-reminder-db --remote",
+    "db:seed:local": "wrangler d1 execute debt-reminder-db --local --file=./seed/0002_seed_admin.sql",
+    "db:reset:local": "rm -rf .wrangler/state/v3/d1 && pnpm run db:migrate:local && pnpm run db:seed:local"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240320.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@debt-reminder/shared": "workspace:*",
+    "@debt-reminder/db": "workspace:*",
+    "@debt-reminder/email": "workspace:*",
+    "@debt-reminder/core": "workspace:*"
+  }
+}
