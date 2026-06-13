@@ -42,7 +42,7 @@ If you just want to spin it up and see how it works locally, follow these 3 step
 Open your Terminal (Mac) or Command Prompt (Windows) and type:
 ```bash
 git clone <your-repo-url>
-cd debt-reminder-system
+cd debt-reminder
 ```
 
 **Step 2: Automated Installation**
@@ -77,7 +77,7 @@ This system utilizes the modern 2024 tech stack:
 ## 📁 Project Structure
 
 ```text
-debt-reminder-system/
+debt-reminder/
 ├── apps/
 │   ├── api/           # Cloudflare Worker Backend (Hono + D1)
 │   └── web/           # React + Vite Frontend (Cloudflare Pages)
