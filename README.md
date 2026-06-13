@@ -103,7 +103,7 @@ In the `apps/api/.dev.vars` file (for local development) or Cloudflare Secrets (
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues page](https://github.com/dangvo/debt-reminder-system/issues) if you want to contribute.
+Feel free to check the [issues page](https://github.com/vonguyendang/debt-reminder/issues) if you want to contribute.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -115,8 +115,8 @@ Feel free to check the [issues page](https://github.com/dangvo/debt-reminder-sys
 
 ## 👤 Author
 **Dang Vo**
-- Github: [@dangvo](https://github.com/dangvo)
-- Project Link: [https://github.com/dangvo/debt-reminder-system](https://github.com/dangvo/debt-reminder-system)
+- Github: [@vonguyendang](https://github.com/vonguyendang)
+- Project Link: [https://github.com/vonguyendang/debt-reminder](https://github.com/vonguyendang/debt-reminder)
 
 ---
 
